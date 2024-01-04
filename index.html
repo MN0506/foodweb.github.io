@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+
+            html,body{
+                height:100%;
+                margin:0;
+            }
+
+            .ball{
+                background: radial-gradient(farthest-corner at 60px 45px,aliceblue 0%,black 50%);
+                width:200px;
+                height:200px;
+                border-radius: 50%;
+
+            }
+
+            .ball-shadow{
+                background: radial-gradient(50% 50%, #000 0%, #fff 100%);
+                height:50px;
+                width:200px;
+            }
+
+
+            .bouncy{
+                height:100%;
+                left:50%;
+                position: absolute;
+            }
+
+            .bouncy .ball-shadow{
+                animation-name: move;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+                animation-duration: 1s;
+                bottom:0;
+                position: absolute;
+                margin-left:-100px;
+            }
+
+            .bouncy .ball{
+
+                animation-name: move1;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+                animation-duration: 1s;
+                position: absolute;
+                margin-left:-100px;
+
+            }
+
+            @keyframes move{
+                from{
+                    bottom:0;
+                    margin-left: -100px;
+                    height:50px;
+                    width:200px;
+                }
+
+                to{
+                    bottom:20px;
+                    margin-left: 0;
+                    height:10px;
+                    width:15px;
+                }
+            }
+
+            @keyframes move1{
+                from{bottom:20px;}
+                to{bottom:80%;}
+            }
+        </style>
+
+    </head>
+
+    <body>
+          <div class="bouncy">
+            <div class="ball-shadow"> </div>
+            <div class="ball"></div>
+          </div>
+
+    </body>
+
+</html>
